@@ -1,15 +1,15 @@
 development:
   adapter: postgresql
-  database: courses
+  database: lesson3
   username: ivan
   password: 3022666
 test:
   adapter: postgresql
-  database: courses_test
+  database: lesson3_test
   username: ivan
   password: 3022666
 production:
   adapter: postgresql
-  database: courses
+  database: lesson3
   username: ivan
   password: 3022666
