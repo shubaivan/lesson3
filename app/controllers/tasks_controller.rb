@@ -7,7 +7,7 @@ class TasksController < ApplicationController
     if params[:priority]
       @tasks = Task.find_lazy_priority(params[:priority]).paginate(page: params[:page], per_page: 3)
     else
-      @tasks = Task.all
+      @tasks = Task.all.paginate(page: params[:page], per_page: 3)
     end
   end
 
