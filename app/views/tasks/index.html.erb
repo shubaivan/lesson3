@@ -25,7 +25,8 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
 
+<%= will_paginate @tasks %>
+total tasks <%=@tasks.total_entries%><br>
 <%= link_to 'New Task', new_task_path %>
