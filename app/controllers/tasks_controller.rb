@@ -4,8 +4,14 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
+    if params[:per_page] == nil
+      @per_page = 3
+    else
+      @per_page = params[:per_page].to_i
+    end
+
     if params[:priority]
-      @tasks = Task.find_lazy_priority(params[:priority]).paginate(page: params[:page], per_page: 3)
+      @tasks = Task.find_lazy_priority(params[:priority]).paginate(page: params[:page], per_page: @per_page)
     else
       @tasks = Task.all.paginate(page: params[:page], per_page: 3)
     end
