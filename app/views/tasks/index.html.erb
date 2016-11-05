@@ -29,4 +29,6 @@
 
 <%= will_paginate @tasks %>
 total tasks <%=@tasks.total_entries%><br>
+<%= select_tag :per_page, options_for_select([2,4,6], params[:per_page].to_i),
+               :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
 <%= link_to 'New Task', new_task_path %>
