@@ -1,0 +1,11 @@
+<%= bootstrap_form_for([@task, @task.comments.build], layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+    <p>
+      <%= f.text_field :commenter, label: "author", placeholder: "author", skip_required: true, help: "Must be author" %>
+    </p>
+    <p>
+      <%= f.text_area :body, label: "comment", hide_label: false, placeholder: "Leave a comment...", label_class: "bg-info" %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
