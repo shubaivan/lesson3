@@ -71,6 +71,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def upvote
+    @task = Task.find(params[:id])
+    @task.votes.create
+    redirect_to(tasks_path)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
