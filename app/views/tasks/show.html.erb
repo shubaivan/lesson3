@@ -15,5 +15,11 @@
   <%= @task.status %>
 </p>
 
+<h2>Comments</h2>
+<%= render @task.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

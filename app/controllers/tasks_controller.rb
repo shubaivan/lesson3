@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-
+  before_filter :find_post,
+                :only => [:set_task, :upvote]
   # GET /tasks
   # GET /tasks.json
   def index
@@ -86,5 +87,9 @@ class TasksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
       params.require(:task).permit(:title, :priority, :status)
+    end
+
+    def find_task
+      @post = Tasks.find(params[:id])
     end
 end
