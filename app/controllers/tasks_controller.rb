@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  http_basic_authenticate_with name: "test", password: "test", except: :show
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_filter :find_post,
                 :only => [:set_task, :upvote]
