@@ -11,7 +11,6 @@ gem 'puma', '~> 3.0'
 # bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
-gem 'bootstrap', '~> 4.0.0.alpha5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
