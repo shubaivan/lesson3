@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tasks</h1>
+<div class="jumbotron">
+  <h1>Tasks</h1>
+</div>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Title</th>
@@ -27,8 +29,10 @@
 </table>
 <br>
 
-<%= will_paginate @tasks %>
-total tasks <%=@tasks.total_entries%><br>
+
+<p class="text-info">Total tasks <span class="badge"><%=@tasks.total_entries%></span></p>
+
+<%= will_paginate @tasks, renderer: BootstrapPagination::Rails %>
 <%= select_tag :per_page, options_for_select([2,4,6], params[:per_page].to_i),
                :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
-<%= link_to 'New Task', new_task_path %>
+<button type="button" class="btn btn-sm btn-success"><%= link_to 'New Task', new_task_path %></button>
